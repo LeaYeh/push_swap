@@ -8,6 +8,8 @@ DPRINTF_DIR	:= $(LIB_DIR)/ftdprintf
 
 SRCS		:= push_swap.c \
 			parse_input.c \
+			stack.c \
+			error.c \
 			utils.c
 
 SRCS 		:= $(addprefix $(SRC_DIR)/, $(SRCS))

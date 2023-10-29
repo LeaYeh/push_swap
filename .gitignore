@@ -57,4 +57,4 @@ dkms.conf
 input*
 out*
 
-pipex
+push_swap
