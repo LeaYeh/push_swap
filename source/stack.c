@@ -6,11 +6,27 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:30:26 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/29 21:03:17 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/10/29 21:30:52 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_ps_tab	*init_ps_tab(int *nbr_array, int size)
+{
+	t_ps_tab	*tab;
+
+	tab = (t_ps_tab *)malloc(sizeof(t_ps_tab));
+	if (!tab)
+		return (NULL);
+	tab->stack_b = (t_list *)malloc(sizeof(t_list));
+	if (!tab->stack_b)
+		return (NULL);
+	tab->stack_a = init_stack(nbr_array, size);
+	if (!tab->stack_a)
+		return (NULL);
+	return (tab);
+}
 
 t_list	*init_stack(int *nbr_array, int size)
 {
