@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:29:04 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/30 13:12:58 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/10/30 15:59:35 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_ps_tab
 int			parse_input_number(int **nbr_array, int argc, char **argv);
 
 int			get_array_len(char **arr);
+int			*copy_nbr(int *nbr_array, int idx);
 
 void		exit_error(void);
 
@@ -40,6 +41,12 @@ void		sb(t_ps_tab **tab);
 void		pa(t_ps_tab **tab);
 void		pb(t_ps_tab **tab);
 void		ra(t_ps_tab **tab);
+void		rb(t_ps_tab **tab);
+void		rr(t_ps_tab **tab);
 void		rra(t_ps_tab **tab);
+void		rrb(t_ps_tab **tab);
+void		rrr(t_ps_tab **tab);
+
+bool		is_sorted(t_list *s);
 
 #endif

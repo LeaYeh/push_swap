@@ -9,6 +9,8 @@ DPRINTF_DIR	:= $(LIB_DIR)/ftdprintf
 SRCS		:= push_swap.c \
 			parse_input.c \
 			stack.c \
+			sort.c \
+			sort_utils.c \
 			op_swap.c \
 			op_push.c \
 			op_rotate.c \
@@ -22,7 +24,7 @@ OBJS 		:= $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/%.o, $(SRCS))
 CC			= cc
 RM			= rm -f
 
-CFLAGS		= -Wall -Wextra -Werror -g -I$(INC_DIR) -I$(LIBFT_DIR) -I$(DPRINTF_DIR)/includes
+CFLAGS		= -Wall -Wextra -Werror -g -fsanitize=address -I$(INC_DIR) -I$(LIBFT_DIR) -I$(DPRINTF_DIR)/includes
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
 			@mkdir -p $(@D)

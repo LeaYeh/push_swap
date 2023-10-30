@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:30:26 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/30 13:30:58 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/10/30 15:59:42 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,30 +28,26 @@ t_ps_tab	*init_ps_tab(int *nbr_array, int size)
 
 t_list	*init_stack(int *nbr_array, int size)
 {
-	int		i;
 	t_list	*head;
 	t_list	*node;
 	int		*num;
 
 	head = NULL;
-	i = 0;
-	while (i < size)
+	while (size-- > 0)
 	{
-		num = (int *)malloc(sizeof(int));
+		num = copy_nbr(nbr_array, size);
 		if (!num)
 		{
 			ft_lstclear(&head, free);
 			break ;
 		}
-		*num = nbr_array[i];
 		node = ft_lstnew(num);
 		if (!node)
 		{
 			ft_lstclear(&head, free);
 			break ;
 		}
-		ft_lstadd_back(&head, node);
-		i++;
+		ft_lstadd_front(&head, node);
 	}
 	free(nbr_array);
 	return (head);
