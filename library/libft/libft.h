@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 19:46:03 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/24 12:52:31 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/10/30 22:58:32 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int		ft_isspace(int c);
 
 char	*ft_itoa(int n);
 int		ft_atoi(const char *str);
+long	ft_atol(const char *str);
 char	**ft_split(char const *s, char c);
 
 int		ft_strncmp(const char *s1, const char *s2, size_t len);

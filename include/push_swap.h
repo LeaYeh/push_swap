@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:29:04 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/30 18:57:08 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/10/30 22:24:54 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void		exit_error(void);
 bool		valid_number(char *str);
 bool		check_dup_number(int *arr, int size);
 bool		check_all_number(char **arr);
+bool		check_limit(long *arr, int size);
 
 t_ps_tab	*init_ps_tab(int *nbr_array, int size);
 t_list		*init_stack(int *nbr_array, int size);

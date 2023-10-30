@@ -15,25 +15,40 @@ static int	_parse_number(int **nbr_array, char **arr, int len)
 	i = 0;
 	while (arr[i])
 	{
-		(*nbr_array)[i] = ft_atoi(arr[i]);
+		if (ft_atol(arr[i]) > INT32_MAX || ft_atol(arr[i]) < INT32_MIN)
+		{
+			free(*nbr_array);
+			return (-1);
+		}
+		(*nbr_array)[i] = ft_atol(arr[i]);
 		i++;
 	}
 	return (i);
 }
 
-static int	_parse_number_from_str(int **nbr_array, char *str)
+char	**_parse_str(char *str)
 {
 	char	**tmp;
-	int		i;
 
 	tmp = ft_split(str, ' ');
 	if (!tmp)
-		return (-1);
+		return (NULL);
 	if (!check_all_number(tmp) || get_array_len((void **)tmp) == 0)
 	{
 		free_array((void **)tmp, -1);
-		return (-1);
+		return (NULL);
 	}
+	return (tmp);
+}
+
+static int	_parse_number_from_str(int **nbr_array, char *str)
+{
+	int		i;
+	char	**tmp;
+
+	tmp = _parse_str(str);
+	if (!tmp)
+		return (-1);
 	*nbr_array = (int *)malloc(sizeof(int) * (get_array_len((void **)tmp)));
 	if (!nbr_array)
 	{
@@ -43,7 +58,12 @@ static int	_parse_number_from_str(int **nbr_array, char *str)
 	i = 0;
 	while (tmp[i])
 	{
-		(*nbr_array)[i] = ft_atoi(tmp[i]);
+		if (ft_atol(tmp[i]) > INT32_MAX || ft_atol(tmp[i]) < INT32_MIN)
+		{
+			free(*nbr_array);
+			return (-1);
+		}
+		(*nbr_array)[i] = ft_atol(tmp[i]);
 		i++;
 	}
 	free_array((void **)tmp, -1);
@@ -60,7 +80,7 @@ int	parse_input_number(int **nbr_array, int argc, char **argv)
 		count = _parse_number(nbr_array, argv + 1, argc - 1);
 	else
 		count = _parse_number_from_str(nbr_array, argv[1]);
-	if (count > 0 && check_dup_number(*nbr_array, count))
+	if (count > 0 && !check_dup_number(*nbr_array, count))
 	{
 		free(*nbr_array);
 		count = -1;

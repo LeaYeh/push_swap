@@ -7,6 +7,7 @@ MAIN_SRCS	= ft_isalpha.c \
 			ft_isspace.c \
 			ft_itoa.c \
 			ft_atoi.c \
+			ft_atol.c \
 			ft_split.c \
 			ft_toupper.c \
 			ft_tolower.c \

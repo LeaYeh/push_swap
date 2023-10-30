@@ -2,7 +2,7 @@
 
 void	exit_error()
 {
-	ft_dprintf(1, "Error\n");
+	ft_dprintf(2, "Error\n");
 	exit(-1);
 }
 
@@ -34,12 +34,12 @@ bool	check_dup_number(int *arr, int size)
 		while (j < size)
 		{
 			if (i != j && arr[i] == arr[j])
-				return (true);
+				return (false);
 			j++;
 		}
 		i++;
 	}
-	return (false);
+	return (true);
 }
 
 bool	check_all_number(char **arr)
@@ -50,6 +50,20 @@ bool	check_all_number(char **arr)
 	while (arr[i])
 	{
 		if (!valid_number(arr[i]))
+			return (false);
+		i++;
+	}
+	return (true);
+}
+
+bool	check_limit(long *arr, int size)
+{
+	int	i;
+
+	i = 0;
+	while (i < size)
+	{
+		if (arr[i] > INT32_MAX || arr[i] < INT32_MIN)
 			return (false);
 		i++;
 	}
