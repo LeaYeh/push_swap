@@ -21,3 +21,10 @@ int	*copy_nbr(int *nbr_array, int idx)
 	*num = nbr_array[idx];
 	return (num);
 }
+
+bool	is_sign(char c)
+{
+	if (c == '+' || c == '-')
+		return (true);
+	return (false);
+}

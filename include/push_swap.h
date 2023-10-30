@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:29:04 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/30 16:39:45 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/10/30 18:14:12 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int			parse_input_number(int **nbr_array, int argc, char **argv);
 
 int			get_array_len(void **arr);
 int			*copy_nbr(int *nbr_array, int idx);
+bool		is_sign(char c);
 
 void		safe_free(void **buf);
 void		free_array(void **arr, int count);
@@ -54,5 +55,7 @@ void		rrb(t_ps_tab **tab);
 void		rrr(t_ps_tab **tab);
 
 bool		is_sorted(t_list *s);
+t_list		*get_min_node(t_list *s);
+int			get_min_index(t_list *s);
 
 #endif
