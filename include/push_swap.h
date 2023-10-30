@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:29:04 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/30 00:29:03 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/10/30 13:12:58 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void		exit_error(void);
 
 t_ps_tab	*init_ps_tab(int *nbr_array, int size);
 t_list		*init_stack(int *nbr_array, int size);
-// void		destroy_stack(t_list *a, t_list *b);
+void		destroy_ps_table(t_ps_tab **tab);
 void		print_stack(t_list *s);
 
 bool		swap_first2(t_list **s);

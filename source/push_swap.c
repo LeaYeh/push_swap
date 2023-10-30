@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:29:11 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/30 00:29:10 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/10/30 13:19:25 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,5 @@ int	main(int argc, char **argv)
 		exit_error();
 	tab = init_ps_tab(nbr_array, size);
 	print_stack(tab->stack_a);
-	rra(&tab);
-	print_stack(tab->stack_a);
-	// print_stack(tab->stack_b);
+	destroy_ps_table(&tab);
 }
