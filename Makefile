@@ -10,6 +10,9 @@ SRCS		:= push_swap.c \
 			parse_input.c \
 			stack.c \
 			op_swap.c \
+			op_push.c \
+			op_rotate.c \
+			op_rev_rotate.c \
 			error.c \
 			utils.c
 

@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   op_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/29 16:29:11 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/30 00:29:10 by lyeh             ###   ########.fr       */
+/*   Created: 2023/10/29 23:21:29 by lyeh              #+#    #+#             */
+/*   Updated: 2023/10/29 23:36:31 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+t_list  *pop_top(t_list **s)
 {
-	int			*nbr_array;
-	int			size;
-	t_ps_tab	*tab;
+	t_list	*node;
 
-	size = parse_input_number(&nbr_array, argc, argv);
-	if (size == -1)
-		exit_error();
-	tab = init_ps_tab(nbr_array, size);
-	print_stack(tab->stack_a);
-	rra(&tab);
-	print_stack(tab->stack_a);
-	// print_stack(tab->stack_b);
+	node = *s;
+	*s = (*s)->next;
+	node->next = NULL;
+	return (node);
+}
+
+void	pa(t_ps_tab **tab)
+{
+	if (!(*tab)->stack_b)
+		return ;
+	ft_lstadd_front(&((*tab)->stack_a), pop_top(&((*tab)->stack_b)));
+	ft_dprintf(1, "pa\n");
+}
+
+void	pb(t_ps_tab **tab)
+{
+	if (!(*tab)->stack_a)
+		return ;
+	ft_lstadd_front(&((*tab)->stack_b), pop_top(&((*tab)->stack_a)));
+	ft_dprintf(1, "pb\n");
 }

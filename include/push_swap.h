@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:29:04 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/29 21:35:53 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/10/30 00:29:03 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,9 @@ void		print_stack(t_list *s);
 bool		swap_first2(t_list **s);
 void		sa(t_ps_tab **tab);
 void		sb(t_ps_tab **tab);
+void		pa(t_ps_tab **tab);
+void		pb(t_ps_tab **tab);
+void		ra(t_ps_tab **tab);
+void		rra(t_ps_tab **tab);
 
 #endif
