@@ -1,7 +1,7 @@
 
 #include "push_swap.h"
 
-int	get_array_len(char **arr)
+int	get_array_len(void **arr)
 {
 	int	i;
 

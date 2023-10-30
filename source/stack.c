@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:30:26 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/30 15:59:42 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/10/30 16:48:22 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ t_ps_tab	*init_ps_tab(int *nbr_array, int size)
 		return (NULL);
 	tab->stack_a = init_stack(nbr_array, size);
 	if (!tab->stack_a)
+	{
+		free(tab);
 		return (NULL);
+	}
 	tab->stack_b = NULL;
 	return (tab);
 }

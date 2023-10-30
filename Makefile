@@ -16,6 +16,7 @@ SRCS		:= push_swap.c \
 			op_rotate.c \
 			op_rev_rotate.c \
 			error.c \
+			free.c \
 			utils.c
 
 SRCS 		:= $(addprefix $(SRC_DIR)/, $(SRCS))

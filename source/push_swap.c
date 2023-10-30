@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:29:11 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/30 16:01:00 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/10/30 16:47:32 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	main(int argc, char **argv)
 	if (size == -1)
 		exit_error();
 	tab = init_ps_tab(nbr_array, size);
+	if (!tab)
+		return (-1);
 	ft_dprintf(1, "sorted: %d\n", is_sorted(tab->stack_a));
 	print_stack(tab->stack_a);
 	destroy_ps_table(&tab);
