@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:29:04 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/30 18:14:12 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/10/30 18:57:08 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ typedef struct s_ps_tab
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
+	int		move_cnt;
 }	t_ps_tab;
 
 
@@ -57,5 +58,7 @@ void		rrr(t_ps_tab **tab);
 bool		is_sorted(t_list *s);
 t_list		*get_min_node(t_list *s);
 int			get_min_index(t_list *s);
+
+void		insert_sort(t_ps_tab **tab);
 
 #endif

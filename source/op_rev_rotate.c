@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 00:16:58 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/30 01:21:00 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/10/30 18:58:40 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	rra(t_ps_tab **tab)
 	if (!rev_rotate(&((*tab)->stack_a)))
 		return ;
 	ft_dprintf(1, "rra\n");
+	(*tab)->move_cnt++;
 }
 
 void	rrb(t_ps_tab **tab)
@@ -41,10 +42,14 @@ void	rrb(t_ps_tab **tab)
 	if (!rev_rotate(&((*tab)->stack_b)))
 		return ;
 	ft_dprintf(1, "rrb\n");
+	(*tab)->move_cnt++;
 }
 
 void	rrr(t_ps_tab **tab)
 {
 	if (rev_rotate(&((*tab)->stack_a)) || rev_rotate(&((*tab)->stack_b)))
+	{
 		ft_dprintf(1, "rrr\n");
+		(*tab)->move_cnt++;
+	}
 }

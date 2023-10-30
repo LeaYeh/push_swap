@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 23:21:29 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/29 23:36:31 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/10/30 18:58:15 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	pa(t_ps_tab **tab)
 		return ;
 	ft_lstadd_front(&((*tab)->stack_a), pop_top(&((*tab)->stack_b)));
 	ft_dprintf(1, "pa\n");
+	(*tab)->move_cnt++;
 }
 
 void	pb(t_ps_tab **tab)
@@ -36,4 +37,5 @@ void	pb(t_ps_tab **tab)
 		return ;
 	ft_lstadd_front(&((*tab)->stack_b), pop_top(&((*tab)->stack_a)));
 	ft_dprintf(1, "pb\n");
+	(*tab)->move_cnt++;
 }
