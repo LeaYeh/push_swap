@@ -1,14 +1,15 @@
-NAME	:= gnl.a
-SRCS	:= get_next_line_bonus.c \
-		get_next_line_utils_bonus.c
+NAME		:= libgnl.a
+SRCS		:= get_next_line.c
+LIBFT_DIR	:= ../libft
 
-OBJS	= ${SRCS:.c=.o}
+OBJS		:= ${SRCS:.c=.o}
+LIBFT_OBJS	:= $(LIBFT_DIR)/*.o	
 
 CC			= cc
 AR			= ar
 RM			= rm -f
 
-CFLAGS		= -Wall -Wextra -Werror -g
+CFLAGS		= -Wall -Wextra -Werror -g -I$(LIBFT_DIR)
 ARFLAGS		= -crs
 
 .c.o:
@@ -17,7 +18,7 @@ ARFLAGS		= -crs
 .PHONY:		all clean fclean re
 
 $(NAME):	${OBJS}
-			${AR} ${ARFLAGS} ${NAME} ${OBJS}
+			${AR} ${ARFLAGS} ${NAME} ${OBJS} $(LIBFT_OBJS)
 
 all:		${NAME}
 
