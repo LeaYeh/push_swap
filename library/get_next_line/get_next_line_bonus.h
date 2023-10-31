@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 14:48:11 by lyeh              #+#    #+#             */
-/*   Updated: 2023/09/26 16:08:19 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/10/31 18:20:53 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <sys/resource.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
+#  define BUFFER_SIZE 128
 # endif
 
 # ifndef MAX_FD
