@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:26:39 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/30 21:47:48 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/10/31 15:28:15 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	insert_sort(t_ps_tab **tab)
 		{
 			while (min_index--)
 				ra(tab);
-			print_stack((*tab)->stack_a);
 		}
 		else
 		{

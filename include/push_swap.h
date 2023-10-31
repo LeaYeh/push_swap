@@ -6,13 +6,14 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:29:04 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/30 22:24:54 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/10/31 15:26:03 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include <stdbool.h>
+# include <limits.h>
 # include "libft.h"
 # include "ft_printf.h"
 

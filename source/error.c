@@ -63,7 +63,7 @@ bool	check_limit(long *arr, int size)
 	i = 0;
 	while (i < size)
 	{
-		if (arr[i] > INT32_MAX || arr[i] < INT32_MIN)
+		if (arr[i] > INT_MAX || arr[i] < INT_MIN)
 			return (false);
 		i++;
 	}

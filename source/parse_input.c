@@ -15,7 +15,7 @@ static int	_parse_number(int **nbr_array, char **arr, int len)
 	i = 0;
 	while (arr[i])
 	{
-		if (ft_atol(arr[i]) > INT32_MAX || ft_atol(arr[i]) < INT32_MIN)
+		if (ft_atol(arr[i]) > INT_MAX || ft_atol(arr[i]) < INT_MIN)
 		{
 			free(*nbr_array);
 			return (-1);
@@ -58,7 +58,7 @@ static int	_parse_number_from_str(int **nbr_array, char *str)
 	i = 0;
 	while (tmp[i])
 	{
-		if (ft_atol(tmp[i]) > INT32_MAX || ft_atol(tmp[i]) < INT32_MIN)
+		if (ft_atol(tmp[i]) > INT_MAX || ft_atol(tmp[i]) < INT_MIN)
 		{
 			free(*nbr_array);
 			return (-1);
