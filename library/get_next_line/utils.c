@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 14:48:11 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/31 21:44:42 by lyeh             ###   ########.fr       */
+/*   Created: 2023/10/31 21:45:18 by lyeh              #+#    #+#             */
+/*   Updated: 2023/10/31 21:45:35 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
-# include <unistd.h>
-# include <stdlib.h>
-# include <sys/resource.h>
-# include "libft.h"
+#include "get_next_line.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1
-# endif
+void	remove_last_newline(char **s)
+{
+	int	len;
 
-# ifndef MAX_FD
-#  define MAX_FD 1024
-# endif
-
-char	*get_next_line(int fd);
-void	remove_last_newline(char **s);
-
-#endif
+	len = ft_strlen(*s);
+	if (*s == NULL || **s == '\0')
+		return ;
+	if (len > 0 && (*s)[len - 1] == '\n')
+	{
+		(*s)[len - 1] = '\0';
+	}
+}

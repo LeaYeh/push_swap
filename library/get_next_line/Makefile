@@ -1,5 +1,6 @@
 NAME		:= libgnl.a
-SRCS		:= get_next_line.c
+SRCS		:= get_next_line.c \
+			utils.c
 LIBFT_DIR	:= ../libft
 
 OBJS		:= ${SRCS:.c=.o}

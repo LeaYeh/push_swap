@@ -6,12 +6,11 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/23 14:48:03 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/31 19:40:53 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/10/31 21:45:07 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include "libft.h"
 
 void	_deep_free(char **buf1, char **buf2, char **buf3)
 {

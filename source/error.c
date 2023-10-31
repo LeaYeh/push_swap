@@ -15,9 +15,11 @@ bool	valid_number(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (!ft_isdigit(str[i]) && !is_sign(str[i]))
+		if (ft_isdigit(str[i]) || \
+			(ft_strlen(str) > 1 && i == 0 && is_sign(str[i])))
+			i++;
+		else
 			return (false);
-		i++;
 	}
 	return (true);
 }

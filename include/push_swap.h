@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:29:04 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/31 15:26:03 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/10/31 19:33:03 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 # include <stdbool.h>
 # include <limits.h>
 # include "libft.h"
-# include "ft_printf.h"
+# include "ft_dprintf.h"
+# include "get_next_line.h"
 
 typedef struct s_ps_tab
 {
@@ -59,7 +60,8 @@ void		rrr(t_ps_tab **tab);
 
 bool		is_sorted(t_list *s);
 t_list		*get_min_node(t_list *s);
-int			get_min_index(t_list *s);
+t_list		*get_max_node(t_list *s);
+int			find_node_index(t_list *s, t_list *node);
 
 void		insert_sort(t_ps_tab **tab);
 

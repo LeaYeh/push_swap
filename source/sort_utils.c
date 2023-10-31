@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:45:04 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/30 18:13:29 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/10/31 15:52:21 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,22 @@ bool	is_sorted(t_list *s)
 	return (ret);
 }
 
+t_list	*get_max_node(t_list *s)
+{
+	t_list	*max_node;
+
+	if (!s)
+		return (NULL);
+	max_node = s;
+	while (s)
+	{
+		if (*((int *)(max_node->content)) < *((int *)(s->content)))
+			max_node = s;
+		s = s->next;
+	}
+	return (max_node);
+}
+
 t_list	*get_min_node(t_list *s)
 {
 	t_list	*min_node;
@@ -47,18 +63,17 @@ t_list	*get_min_node(t_list *s)
 	return (min_node);
 }
 
-int	get_min_index(t_list *s)
+int	find_node_index(t_list *s, t_list *node)
 {
-	int		i;
-	t_list	*min_node;
+	int	i;
 
 	if (!s)
 		return (-1);
-	min_node = get_min_node(s);
+	node = get_max_node(s);
 	i = 0;
 	while (s)
 	{
-		if (*((int *)(min_node->content)) == *((int *)(s->content)))
+		if (*((int *)(node->content)) == *((int *)(s->content)))
 			return (i);
 		s = s->next;
 		i++;
