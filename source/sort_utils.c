@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:45:04 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/31 15:52:21 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/11/01 17:42:52 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ int	find_node_index(t_list *s, t_list *node)
 
 	if (!s)
 		return (-1);
-	node = get_max_node(s);
 	i = 0;
 	while (s)
 	{

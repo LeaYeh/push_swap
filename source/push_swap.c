@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:29:11 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/31 15:28:33 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/11/01 18:12:14 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ int	main(int argc, char **argv)
 	if (!tab)
 		return (-1);
 	// print_stack(tab->stack_a);
-	insert_sort(&tab);
+	sort(&tab);
 	// print_stack(tab->stack_a);
-	// ft_dprintf(1, "check sorted: %d, move_cnt: %d\n", is_sorted(tab->stack_a), tab->move_cnt);
 	destroy_ps_table(&tab);
 }
