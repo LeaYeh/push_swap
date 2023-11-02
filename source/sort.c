@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:26:39 by lyeh              #+#    #+#             */
-/*   Updated: 2023/11/02 17:01:06 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/11/02 18:14:11 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,25 +23,49 @@ bool	sort(t_ps_tab **tab)
 		sa(tab);
 	else if (size == 3)
 		three_sort(tab);
-	else if (size > 3 && size < 100)
-		insert_sort(tab, "min");
+	else if (size > 3 && size < 6)
+		medium_sort(tab);
 	else
-		insert_sort(tab, "min");
+		radix_sort(tab);
 	return (is_sorted((*tab)->stack_a));
 }
 
-void	insert_sort(t_ps_tab **tab, char *type)
+int	get_binary_len(int val)
 {
-	if (is_sorted((*tab)->stack_a))
-		return ;
-	while (ft_lstsize((*tab)->stack_a) > 3)
+	int	i;
+
+	i = 0;
+	while (val > 0)
 	{
-		promote_node_from_a(tab, type);
-		pb(tab);
+		val /= 2;
+		i++;
 	}
-	three_sort(tab);
-	while ((*tab)->stack_b)
-		pa(tab);
+	return (i);
+}
+
+void	radix_sort(t_ps_tab **tab)
+{
+	int	i;
+	int	shift;
+	int	tmp;
+
+	shift = 0;
+	while (shift < get_binary_len((*tab)->size))
+	{
+		i = 0;
+		while (i < (*tab)->size)
+		{
+			tmp = ((*((t_node *)(*tab)->stack_a->content)).sorted_index);
+			if (((tmp >> shift) & 1) == 0)
+				pb(tab);
+			else
+				ra(tab);
+			i++;
+		}
+		while ((*tab)->stack_b)
+			pa(tab);
+		shift++;
+	}
 }
 
 void	bubble_sort(int **nbr_array, int size)

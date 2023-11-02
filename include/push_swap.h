@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:29:04 by lyeh              #+#    #+#             */
-/*   Updated: 2023/11/02 17:18:41 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/11/02 17:47:07 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ t_list		*get_max_node(t_list *s);
 int			find_node_index(t_list *s, t_list *node);
 
 bool		sort(t_ps_tab **tab);
-void		insert_sort(t_ps_tab **tab, char *type);
+void		radix_sort(t_ps_tab **tab);
 void		bubble_sort(int **nbr_array, int size);
 void		three_sort(t_ps_tab **tab);
 void		medium_sort(t_ps_tab **tab);

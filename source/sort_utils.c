@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 15:45:04 by lyeh              #+#    #+#             */
-/*   Updated: 2023/11/02 17:32:47 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/11/02 18:11:53 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ t_list	*get_max_node(t_list *s)
 	max_node = s;
 	while (s)
 	{
-		if (((t_node *)(max_node->content))->value < ((t_node *)(s->content))->value)
+		if (((t_node *)(max_node->content))->value < \
+			((t_node *)(s->content))->value)
 			max_node = s;
 		s = s->next;
 	}

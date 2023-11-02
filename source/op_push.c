@@ -6,13 +6,13 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 23:21:29 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/30 18:58:15 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/11/02 18:16:24 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list  *pop_top(t_list **s)
+t_list	*pop_top(t_list **s)
 {
 	t_list	*node;
 

@@ -31,6 +31,7 @@ clean:
 			@make -C $(LIBFT_DIR) clean
 			@make -C $(DPRINTF_DIR) clean
 			@make -C $(GNL_DIR) clean
+			$(RM) -r $(BUILD_DIR)
 
 fclean:
 			@make -C $(LIBFT_DIR) fclean

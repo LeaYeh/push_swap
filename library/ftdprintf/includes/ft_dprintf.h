@@ -6,12 +6,12 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 14:12:08 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/31 19:33:45 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/11/02 18:15:45 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef FT_DPRINTF_H
+# define FT_DPRINTF_H
 # include <stdlib.h>
 # include <stdarg.h>
 # include <stdbool.h>

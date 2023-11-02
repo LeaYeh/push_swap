@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 19:35:38 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/31 21:46:25 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/11/02 18:19:44 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,8 @@ static int	_parse_number_from_str(int **nbr_array, char *str)
 		free_array((void **)tmp, -1);
 		return (-1);
 	}
-	i = 0;
-	while (tmp[i])
+	i = -1;
+	while (tmp[++i])
 	{
 		if (ft_atol(tmp[i]) > INT_MAX || ft_atol(tmp[i]) < INT_MIN)
 		{
@@ -78,7 +78,6 @@ static int	_parse_number_from_str(int **nbr_array, char *str)
 			return (-1);
 		}
 		(*nbr_array)[i] = ft_atol(tmp[i]);
-		i++;
 	}
 	free_array((void **)tmp, -1);
 	return (i);
