@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 21:12:49 by lyeh              #+#    #+#             */
-/*   Updated: 2023/10/30 18:59:55 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/11/01 19:34:38 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 
 bool	swap_first2(t_list **s)
 {
-	t_list	*tmp_node;
+	t_list	*first_node;
+	t_list	*second_node;
 
 	if (!*s || !(*s)->next)
 		return (false);
-	tmp_node = *s;
-	*s = ft_lstlast(*s);
-	(*s)->next = tmp_node;
-	*s = tmp_node->next;
-	tmp_node->next = NULL;
+	first_node = *s;
+	second_node = (*s)->next;
+	first_node->next = second_node->next;
+	second_node->next = first_node;
+	*s = second_node;
 	return (true);
 }
 

@@ -6,7 +6,7 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:29:04 by lyeh              #+#    #+#             */
-/*   Updated: 2023/11/01 18:07:07 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/11/02 17:18:41 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,20 @@ typedef struct s_ps_tab
 	t_list	*stack_a;
 	t_list	*stack_b;
 	int		move_cnt;
+	int		size;
 }	t_ps_tab;
 
+typedef struct s_node
+{
+	int	value;
+	int	sorted_index;
+}	t_node;
 
 int			parse_input_number(int **nbr_array, int argc, char **argv);
 
 int			get_array_len(void **arr);
 int			*copy_nbr(int *nbr_array, int idx);
+int			*copy_nbr_array(int *nbr_array, int size);
 bool		is_sign(char c);
 
 void		safe_free(void **buf);
@@ -42,8 +49,10 @@ bool		check_all_number(char **arr);
 bool		check_limit(long *arr, int size);
 
 t_ps_tab	*init_ps_tab(int *nbr_array, int size);
-t_list		*init_stack(int *nbr_array, int size);
+t_list		*init_stack(int *nbr_array, int *sorted_array, int size);
 void		destroy_ps_table(t_ps_tab **tab);
+
+int			get_sorted_index(int *sorted_array, int target_value, int size);
 void		print_stack(t_list *s);
 
 bool		swap_first2(t_list **s);
@@ -65,7 +74,9 @@ int			find_node_index(t_list *s, t_list *node);
 
 bool		sort(t_ps_tab **tab);
 void		insert_sort(t_ps_tab **tab, char *type);
+void		bubble_sort(int **nbr_array, int size);
 void		three_sort(t_ps_tab **tab);
+void		medium_sort(t_ps_tab **tab);
 void		promote_node_from_a(t_ps_tab **tab, char *type);
 
 #endif

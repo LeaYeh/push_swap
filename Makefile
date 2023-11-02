@@ -7,7 +7,9 @@ BUILD_DIR	:= build
 SRCS		:= push_swap.c \
 			parse_input.c \
 			stack.c \
+			stack_utils.c \
 			sort.c \
+			sort_special.c \
 			sort_utils.c \
 			op_swap.c \
 			op_push.c \

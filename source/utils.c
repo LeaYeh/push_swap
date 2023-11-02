@@ -28,3 +28,20 @@ bool	is_sign(char c)
 		return (true);
 	return (false);
 }
+
+int	*copy_nbr_array(int *nbr_array, int size)
+{
+	int	i;
+	int	*new_array;
+
+	new_array = (int *)malloc(sizeof(int) * size);
+	if (!new_array)
+		return (NULL);
+	i = 0;
+	while (i < size)
+	{
+		new_array[i] = nbr_array[i];
+		i++;
+	}
+	return (new_array);
+}

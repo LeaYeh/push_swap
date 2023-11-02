@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/29 16:29:11 by lyeh              #+#    #+#             */
-/*   Updated: 2023/11/02 17:36:54 by lyeh             ###   ########.fr       */
+/*   Created: 2023/11/02 17:16:45 by lyeh              #+#    #+#             */
+/*   Updated: 2023/11/02 17:26:53 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	get_sorted_index(int *sorted_array, int target_value, int size)
 {
-	int			*nbr_array;
-	int			size;
-	t_ps_tab	*tab;
+	int	i;
 
-	size = parse_input_number(&nbr_array, argc, argv);
-	if (size == -1)
-		exit_error();
-	tab = init_ps_tab(nbr_array, size);
-	if (!tab)
-		return (-1);
-	print_stack(tab->stack_a);
-	sort(&tab);
-	print_stack(tab->stack_a);
-	destroy_ps_table(&tab);
+	i = 0;
+	while (i < size)
+	{
+		if (sorted_array[i] == target_value)
+			return (i);
+		i++;
+	}
+	return (-1);
+}
+
+void	print_stack(t_list *s)
+{
+	int	i;
+
+	i = 0;
+	while (s)
+	{
+		ft_dprintf(1, "%d: index=%d, value=%d\n", i,
+			((t_node *)(s->content))->sorted_index,
+			((t_node *)(s->content))->value);
+		s = s->next;
+		i++;
+	}
 }
