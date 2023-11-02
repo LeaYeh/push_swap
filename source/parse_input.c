@@ -6,14 +6,12 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 19:35:38 by lyeh              #+#    #+#             */
-/*   Updated: 2023/11/02 18:53:31 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/11/02 18:58:32 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
-
-
 
 static int	_parse_number(int **nbr_array, char **arr, int len)
 {
