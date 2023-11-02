@@ -25,7 +25,7 @@ OBJS 		:= $(patsubst $(SRC_DIR)/%.c, $(BUILD_DIR)/%.o, $(SRCS))
 CC			= cc
 RM			= rm -f
 
-CFLAGS		= -Wall -Wextra -Werror -g -fsanitize=address -I$(INC_DIR) -I$(LIB_DIR)/build
+CFLAGS		= -Wall -Wextra -Werror -g -I$(INC_DIR) -I$(LIB_DIR)/build
 
 .PHONY:		all bonus clean fclean re
 

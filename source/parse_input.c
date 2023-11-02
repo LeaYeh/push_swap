@@ -6,12 +6,14 @@
 /*   By: lyeh <lyeh@student.42vienna.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 19:35:38 by lyeh              #+#    #+#             */
-/*   Updated: 2023/11/02 18:19:44 by lyeh             ###   ########.fr       */
+/*   Updated: 2023/11/02 18:53:31 by lyeh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
+
+
 
 static int	_parse_number(int **nbr_array, char **arr, int len)
 {
@@ -93,6 +95,9 @@ int	parse_input_number(int **nbr_array, int argc, char **argv)
 		read_input = get_next_line(STDIN_FILENO);
 		remove_last_newline(&read_input);
 		count = _parse_number_from_str(nbr_array, read_input);
+		free(read_input);
+		close(STDIN_FILENO);
+		read_input = get_next_line(STDIN_FILENO);
 		free(read_input);
 	}
 	else if (argc > 2)
